@@ -1,24 +1,29 @@
 Build and deploy the app to minikube !
 
 1-Start minikube:
-
+ ```console
 minikube start
+```
 
 2-Point your terminal to minikube's Docker using minikube docker-env:
- 
+
+```console 
  @FOR /f "tokens=*" %i IN ('minikube docker-env') DO @%i
-
+```
 3-Run the following command to build the Docker image:
-
+```console 
 docker build -t testapp:latest .
-
+```
 4-Deploy to Kubernetes:
-
+```console 
 kubectl apply -f manifest.yaml
-
+```
 5-Check the status of the pod:
+```console 
    kubectl get pods
+```
    
 6-Once the pod is running, you can access it via port forwarding :
-
+```console 
    kubectl port-forward <pod_name> 8080:8080
+```
