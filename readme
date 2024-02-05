@@ -23,6 +23,6 @@ kubectl apply -f manifest.yaml
 ```
    
 6-Once the pod is running, you can access it via port forwarding :
-```
+```bash
    kubectl port-forward <pod_name> 8080:8080
-```
+
